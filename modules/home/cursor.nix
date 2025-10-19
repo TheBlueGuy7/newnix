@@ -1,6 +1,5 @@
 { pkgs, ... }: {
-  home = {
-    pointerCursor = {
+    home.pointerCursor = {
       package = pkgs.rose-pine-cursor;
       name = "BreezeX-RosePine-Linux";
       size = 24;
@@ -10,5 +9,4 @@
         defaultCursor = true;
       };
     };
-  };
 }

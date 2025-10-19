@@ -43,8 +43,8 @@
 	    };
 
 	    modules = [
-	      ./nixos/configuration.nix
-	      inputs.home-manager.nixosModule.default
+	      ./hosts/default/configuration.nix
+	      inputs.home-manager.nixosModules.default
       ];
     };
   };

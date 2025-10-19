@@ -1,11 +1,9 @@
 { inputs, config, pkgs, ... }:
 
 {
-  imports =
-    [ 
+  imports = [ 
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      ./packages.nix
       ../../modules/nixos/bundle.nix
     ];
 
@@ -15,6 +13,40 @@
       "blueguy" = import ./home.nix;
     };
   };
+
+  nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = with pkgs; [
+
+    # System
+
+    waybar
+    rofi
+    hyprshot
+    dunst
+    hyprpaper
+    hyprpolkitagent
+    home-manager
+    gnome-keyring
+    pavucontrol
+    hyprlock
+
+  ];
+
+  fonts.packages = with pkgs; [
+    jetbrains-mono
+    noto-fonts
+    noto-fonts-emoji
+    twemoji-color-font
+    font-awesome_6
+    powerline-fonts
+    powerline-symbols
+    fira
+    nerd-fonts.jetbrains-mono
+    powerline-fonts
+  ];
+
+  programs.hyprland.enable = true;
 
   networking.hostName = "radiator-nixos";
   networking.networkmanager.enable = true;
@@ -33,6 +65,8 @@
   services.dbus.enable = true;
 
   nixpkgs.overlays = [ inputs.polymc.overlay ];
+
+  virtualisation.libvirtd.enable = true;
 
 
   xdg.portal = {

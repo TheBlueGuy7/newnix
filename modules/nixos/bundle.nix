@@ -2,13 +2,7 @@
   imports = [
     ./audio.nix
     ./bootloader.nix
-    ./user.nix
-    ./hyprland.nix
+    ./users.nix
     ./graphics.nix
-    ./env.nix
-    #./xserver.nix
-    #./plasma.nix
-    #./nixvim/nixvim.nix
-    ./virtmanager.nix
   ];
 }
