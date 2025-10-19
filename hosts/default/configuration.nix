@@ -4,11 +4,17 @@
   imports =
     [ 
       ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.default
       ./packages.nix
-      ./modules/bundle.nix
+      ../../modules/nixos/bundle.nix
     ];
-  
-  nixpkgs.overlays = [ inputs.polymc.overlay ];
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "blueguy" = import ./home.nix;
+    };
+  };
 
   networking.hostName = "radiator-nixos";
   networking.networkmanager.enable = true;
@@ -25,7 +31,8 @@
 
   services.flatpak.enable = true;
   services.dbus.enable = true;
-  virtualisation.virtualbox.host.enable = true;
+
+  nixpkgs.overlays = [ inputs.polymc.overlay ];
 
 
   xdg.portal = {

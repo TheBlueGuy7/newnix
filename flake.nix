@@ -33,27 +33,19 @@
   let
     system = "x86_64-linux";
   in {
+    nixosConfigurations.radiator-nixos = nixpkgs.lib.nixosSystem {
+	    specialArgs = {
+        pkgs-stable = import nixpkgs-stable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+	      inherit system inputs;
+	    };
 
-      nixosConfigurations.radiator-nixos = nixpkgs.lib.nixosSystem {
-
-	  specialArgs = {
-            pkgs-stable = import nixpkgs-stable {
-              inherit system;
-	      config.allowUnfree = true;
-            };
-	    inherit system inputs;
-	  };
-
-	  modules = [
-
-	    ./nixos/configuration.nix
-
-          ];
-      };
-
-      homeConfigurations.blueguy = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        modules = [ ./home-manager/home.nix ];
-      };
+	    modules = [
+	      ./nixos/configuration.nix
+	      inputs.home-manager.nixosModule.default
+      ];
+    };
   };
 }
