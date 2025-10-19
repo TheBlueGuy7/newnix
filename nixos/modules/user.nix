@@ -9,7 +9,7 @@
 
     users.blueguy = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "wheel" "libvirtd" ];
       shell = pkgs.zsh;
     };
   };

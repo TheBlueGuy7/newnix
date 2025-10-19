@@ -1,8 +1,6 @@
-{ pkgs, inputs, ... }:
+{ pkgs, pkgs-stable, inputs, ... }:
 {
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
+  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
 
@@ -13,7 +11,6 @@
     vesktop
     vscodium
     polymc
-    xfce.thunar
     shotwell
     tor-browser
     osu-lazer
@@ -22,24 +19,21 @@
     gpu-screen-recorder
     gpu-screen-recorder-gtk
     vlc
-    curl
-    zip
-    unzip
-    gnutar
-    hyprlock
     qalculate-gtk
-    code-cursor
     parsec-bin
     arduino-ide
     filezilla
-    p7zip
     gparted
+    orca-slicer
+    xwayland
+    protontricks
+    chromium
+    rofimoji
+    xfce.thunar
 
-    # GUI utils
-
-    waybar
-    rofi
-    pavucontrol
+    kdePackages.sddm
+    kdePackages.kwrited
+    kdePackages.kate
 
     # CLI utils
 
@@ -64,8 +58,18 @@
     nmap
     gobuster
     lynx
+    gtk4
+    webkitgtk_4_1
+    zip
+    unzip
+    gnutar
+    curl
+    p7zip
+    jdk8
+    xpad
+    wineWowPackages.wayland
 
-    # Hyprland
+    # System
 
     waybar
     rofi
@@ -73,16 +77,13 @@
     dunst
     hyprpaper
     hyprpolkitagent
-
-    # Other
-
     home-manager
-    jdk8
-    xpad
     gnome-keyring
-    wineWowPackages.wayland
+    pavucontrol
+    hyprlock
 
     # Themes
+
     plata-theme
     arc-icon-theme
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
