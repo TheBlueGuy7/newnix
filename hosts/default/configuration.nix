@@ -32,6 +32,8 @@
     pavucontrol
     hyprlock
     wl-clipboard
+    gh
+    git
 
   ];
 

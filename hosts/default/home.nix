@@ -52,7 +52,6 @@
     zsh
     fastfetch
     alacritty
-    git
     nodejs_23
     pnpm_10
     python313
@@ -60,7 +59,6 @@
     eza
     fzf
     tree
-    gh
     neovim
     btop
     stow
