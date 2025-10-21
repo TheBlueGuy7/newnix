@@ -9,6 +9,7 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
+    backupFileExtension = "backup";
     users = {
       "blueguy" = import ./home.nix;
     };
@@ -30,6 +31,7 @@
     gnome-keyring
     pavucontrol
     hyprlock
+    wl-clipboard
 
   ];
 
@@ -47,6 +49,7 @@
   ];
 
   programs.hyprland.enable = true;
+  programs.steam.enable = true;
 
   networking.hostName = "radiator-nixos";
   networking.networkmanager.enable = true;
@@ -63,6 +66,8 @@
 
   services.flatpak.enable = true;
   services.dbus.enable = true;
+
+  services.displayManager.ly.enable = true;
 
   nixpkgs.overlays = [ inputs.polymc.overlay ];
 

@@ -41,6 +41,7 @@
     chromium
     rofimoji
     xfce.thunar
+    modrinth-app
 
     kdePackages.sddm
     kdePackages.kwrited
@@ -79,7 +80,6 @@
     jdk8
     xpad
     wineWowPackages.wayland
-    steam
     virt-manager
 
     # Themes
@@ -90,12 +90,13 @@
 
   ];
 
-  
-   
-
-  #home.file = {
-
-  #};
+  home.file = {
+    ".config/hypr".source = ../../dotfiles/hypr;
+    ".config/rofi".source = ../../dotfiles/rofi;
+    ".config/dunst".source = ../../dotfiles/dunst;
+    ".config/alacritty".source = ../../dotfiles/alacritty;
+    ".config/waybar".source = ../../dotfiles/waybar;
+  };
 
   home.sessionVariables = {
     EDITOR = "nvim";
