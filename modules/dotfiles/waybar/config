@@ -111,7 +111,7 @@
         "phone": "",
         "portable": ""
       },
-      "format-muted": "{volume}% ",
+      "format-muted": "{volume}%  ",
       "format-source": "{volume}% ",
       "format-source-muted": "",
       "on-click": "pavucontrol",

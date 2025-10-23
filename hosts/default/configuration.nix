@@ -34,6 +34,11 @@
     wl-clipboard
     gh
     git
+    linuxKernel.packages.linux_6_12.v4l2loopback
+    mesa
+    mesa_glu
+    vulkan-loader
+    mesa-demos
 
   ];
 
@@ -55,6 +60,11 @@
 
   networking.hostName = "radiator-nixos";
   networking.networkmanager.enable = true;
+  networking.firewall = {
+    enable = false;
+    allowedTCPPorts = [ 80 443 ];
+
+  };
 
   time.timeZone = "Europe/Budapest";
 

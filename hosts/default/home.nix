@@ -42,10 +42,27 @@
     rofimoji
     xfce.thunar
     modrinth-app
+    qtox
+    localsend
 
-    kdePackages.sddm
     kdePackages.kwrited
     kdePackages.kate
+    kdePackages.dolphin
+    kdePackages.dolphin-plugins
+    kdePackages.kio-admin
+    kdePackages.kompare
+    kdePackages.ffmpegthumbs
+    kdePackages.kdegraphics-thumbnailers
+    kdePackages.kimageformats
+    kdePackages.kdesdk-thumbnailers
+    kdePackages.qtimageformats
+    kdePackages.konsole
+    libappimage
+    icoutils
+    resvg
+    taglib_1
+    kdePackages.qt6ct
+
 
     # CLI utils
 
@@ -69,6 +86,7 @@
     gobuster
     lynx
     gtk4
+    gtk3
     webkitgtk_4_1
     zip
     unzip
@@ -79,6 +97,10 @@
     xpad
     wineWowPackages.wayland
     virt-manager
+    ocamlPackages.gstreamer
+    glew
+    webkitgtk_4_1
+    kdePackages.k3b
 
     # Themes
 
@@ -89,11 +111,11 @@
   ];
 
   home.file = {
-    ".config/hypr".source = ../../dotfiles/hypr;
-    ".config/rofi".source = ../../dotfiles/rofi;
-    ".config/dunst".source = ../../dotfiles/dunst;
-    ".config/alacritty".source = ../../dotfiles/alacritty;
-    ".config/waybar".source = ../../dotfiles/waybar;
+    ".config/hypr".source = ../../modules/dotfiles/hypr;
+    ".config/rofi".source = ../../modules/dotfiles/rofi;
+    ".config/dunst".source = ../../modules/dotfiles/dunst;
+    ".config/alacritty".source = ../../modules/dotfiles/alacritty;
+    ".config/waybar".source = ../../modules/dotfiles/waybar;
   };
 
   home.sessionVariables = {

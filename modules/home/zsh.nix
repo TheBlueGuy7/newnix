@@ -16,12 +16,13 @@
       rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
       upd = "nix flake update ${flakeDir}";
       upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
+      del-garbage = "sudo nix-collect-garbage -d";
+      
 
-      hms = "home-manager switch --flake ${flakeDir}";
 
-      conf = "nvim ${flakeDir}/nixos/configuration.nix";
-      pkgs = "nvim ${flakeDir}/nixos/packages.nix";
-      hyprconf = "nvim ~/.config/hypr/hyprland.conf";
+      conf = "nvim ${flakeDir}/hosts/default/configuration.nix";
+      homeconf = "nvim ${flakeDir}/hosts/default/home.nix";
+      hyprconf = "nvim ${flakeDir}/dotfiles/hypr/hyprland.conf";
 
       ll = "eza -l";
       v = "nvim";
