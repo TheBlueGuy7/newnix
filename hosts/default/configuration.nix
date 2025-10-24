@@ -13,6 +13,7 @@
     users = {
       "blueguy" = import ./home.nix;
     };
+    useGlobalPkgs = false;
   };
 
   nixpkgs.config.allowUnfree = true;
