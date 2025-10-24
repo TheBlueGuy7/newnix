@@ -4,7 +4,10 @@
   networking.networkmanager.enable = true;
   networking.firewall = {
     enable = false;
-    allowedTCPPorts = [ 80 443 ];
+    allowedTCPPorts = [
+      80
+      443
+    ];
 
   };
 }

@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -11,9 +10,9 @@
     };
 
     hyprpaper = {
-       url = "github:hyprwm/hyprpaper";
-       inputs.nixpkgs.follows = "nixpkgs";
-   };
+      url = "github:hyprwm/hyprpaper";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     polymc.url = "github:PolyMC/PolyMC";
 
@@ -24,23 +23,25 @@
     };
 
     hyprland.url = "github:hyprwm/hyprland?ref=v0.36.0";
-
   };
 
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    {
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... } @inputs:{
-    nixosConfigurations.radiator-nixos = nixpkgs.lib.nixosSystem {
-	    specialArgs = {
-        pkgs-stable = import nixpkgs-stable {
-          config.allowUnfree = true;
-        };
-	      inherit inputs;
-	    };
+      nixosConfigurations.radiator-nixos = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
 
-	    modules = [
-	      ./hosts/default/configuration.nix
-	      inputs.home-manager.nixosModules.default
-      ];
+        modules = [
+          ./hosts/default/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
-  };
 }

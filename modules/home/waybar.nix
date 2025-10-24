@@ -1,4 +1,4 @@
 { ... }:
 {
-    home.file.".config/waybar".source = ../dotfiles/waybar;
+  home.file.".config/waybar".source = ../dotfiles/waybar;
 }

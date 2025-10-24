@@ -1,11 +1,16 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
-  imports = [ 
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-      ../../modules/nixos
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    ../../modules/nixos
+  ];
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
@@ -22,7 +27,6 @@
 
     # System
 
-    
     gnome-keyring
     gh
     git
@@ -53,23 +57,25 @@
   time.timeZone = "Europe/Budapest";
 
   console.keyMap = "us";
-  
+
   system.stateVersion = "25.05";
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nixpkgs.overlays = [ inputs.polymc.overlay ];
 
   virtualisation.libvirtd.enable = true;
 
-
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-wlr
+      pkgs.xdg-desktop-portal-gtk
+    ];
     wlr.enable = true;
     config.common.default = "*";
   };
 }
-

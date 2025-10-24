@@ -1,9 +1,9 @@
-{inputs, config, ...}:{
+{ inputs, config, ... }:
+{
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
-  boot.extraModulePackages = with config.boot.kernelPackages;
-    [ v4l2loopback.out ];
+
+  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
 
   # Activate kernel modules (choose from built-ins and extra ones)
   boot.kernelModules = [

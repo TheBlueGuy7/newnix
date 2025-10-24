@@ -1,8 +1,8 @@
-{pkgs, inputs, ...}:
+{ pkgs, inputs, ... }:
 {
 
   imports = [
-   ../../modules/home
+    ../../modules/home
   ];
 
   home = {
@@ -14,9 +14,9 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    
+
     # Desktop apps
-    
+
     firefox
     brave
     vesktop
@@ -66,13 +66,12 @@
     gvfs
     easyeffects
 
-
     # CLI utils
 
     zsh
     fastfetch
     alacritty
-    nodejs_23
+    nodejs  # _23 is not in nixpkgs-unstable anymore
     pnpm_10
     python313
     python313Packages.pip
@@ -97,7 +96,7 @@
     curl
     p7zip
     jdk8
-    xpad
+    # xpad # build-failure on unstable
     wineWowPackages.wayland
     virt-manager
     ocamlPackages.gstreamer
