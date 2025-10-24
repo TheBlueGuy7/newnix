@@ -41,4 +41,8 @@
       # theme = "darkblood";
     };
   };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 }

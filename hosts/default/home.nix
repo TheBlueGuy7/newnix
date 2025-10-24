@@ -2,7 +2,7 @@
 {
 
   imports = [
-   ../../modules/home/bundle.nix
+   ../../modules/home
   ];
 
   home = {
@@ -35,7 +35,6 @@
     arduino-ide
     filezilla
     gparted
-    orca-slicer
     xwayland
     protontricks
     chromium
@@ -47,8 +46,6 @@
 
     kdePackages.kwrited
     kdePackages.kate
-    kdePackages.dolphin
-    kdePackages.dolphin-plugins
     kdePackages.kio-admin
     kdePackages.kompare
     kdePackages.ffmpegthumbs
@@ -56,12 +53,18 @@
     kdePackages.kimageformats
     kdePackages.kdesdk-thumbnailers
     kdePackages.qtimageformats
-    kdePackages.konsole
     libappimage
     icoutils
     resvg
     taglib_1
     kdePackages.qt6ct
+    shared-mime-info
+    xdg-utils
+    kdePackages.breeze
+    kdePackages.breeze-icons
+    xfce.tumbler
+    gvfs
+    easyeffects
 
 
     # CLI utils
@@ -109,18 +112,6 @@
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
 
   ];
-
-  home.file = {
-    ".config/hypr".source = ../../modules/dotfiles/hypr;
-    ".config/rofi".source = ../../modules/dotfiles/rofi;
-    ".config/dunst".source = ../../modules/dotfiles/dunst;
-    ".config/alacritty".source = ../../modules/dotfiles/alacritty;
-    ".config/waybar".source = ../../modules/dotfiles/waybar;
-  };
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
 
   programs.home-manager.enable = true;
 }

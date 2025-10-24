@@ -28,18 +28,13 @@
   };
 
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... } @inputs:
-  
-  let
-    system = "x86_64-linux";
-  in {
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... } @inputs:{
     nixosConfigurations.radiator-nixos = nixpkgs.lib.nixosSystem {
 	    specialArgs = {
         pkgs-stable = import nixpkgs-stable {
-          inherit system;
           config.allowUnfree = true;
         };
-	      inherit system inputs;
+	      inherit inputs;
 	    };
 
 	    modules = [

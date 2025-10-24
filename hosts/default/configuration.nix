@@ -4,7 +4,7 @@
   imports = [ 
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      ../../modules/nixos/bundle.nix
+      ../../modules/nixos
     ];
 
   home-manager = {
@@ -21,17 +21,8 @@
 
     # System
 
-    waybar
-    rofi
-    hyprshot
-    dunst
-    hyprpaper
-    hyprpolkitagent
-    home-manager
+    
     gnome-keyring
-    pavucontrol
-    hyprlock
-    wl-clipboard
     gh
     git
     linuxKernel.packages.linux_6_12.v4l2loopback
@@ -39,6 +30,7 @@
     mesa_glu
     vulkan-loader
     mesa-demos
+    wxwidgets_3_3
 
   ];
 
@@ -55,31 +47,17 @@
     powerline-fonts
   ];
 
-  programs.hyprland.enable = true;
   programs.steam.enable = true;
-
-  networking.hostName = "radiator-nixos";
-  networking.networkmanager.enable = true;
-  networking.firewall = {
-    enable = false;
-    allowedTCPPorts = [ 80 443 ];
-
-  };
 
   time.timeZone = "Europe/Budapest";
 
-  console = {
-  #   font = "Lat2-Terminus16";
-    keyMap = "us";
-  };
+  console.keyMap = "us";
+  
   system.stateVersion = "25.05";
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  services.flatpak.enable = true;
-  services.dbus.enable = true;
-
-  services.displayManager.ly.enable = true;
+  
 
   nixpkgs.overlays = [ inputs.polymc.overlay ];
 
@@ -88,8 +66,9 @@
 
   xdg.portal = {
     enable = true;
-    #extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
+    extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
     wlr.enable = true;
+    config.common.default = "*";
   };
 }
 
