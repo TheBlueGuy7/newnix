@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, pkgs-stable, ... }:
 
 {
   imports = [ 
@@ -8,7 +8,9 @@
     ];
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { 
+      inherit inputs pkgs-stable; 
+    };
     backupFileExtension = "backup";
     users = {
       "blueguy" = import ./home.nix;
@@ -18,7 +20,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-stable; [
 
     # System
 
@@ -31,20 +33,22 @@
     mesa_glu
     vulkan-loader
     mesa-demos
-    wxwidgets_3_3
+    pkgs.wxwidgets_3_3
+    pkgs.polymc
 
   ];
 
   fonts.packages = with pkgs; [
     jetbrains-mono
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     twemoji-color-font
     font-awesome_6
     powerline-fonts
     powerline-symbols
     fira
     nerd-fonts.jetbrains-mono
+    nerd-fonts.iosevka
     powerline-fonts
   ];
 
@@ -60,7 +64,12 @@
 
   
 
-  nixpkgs.overlays = [ inputs.polymc.overlay ];
+  nixpkgs.overlays = [ 
+    inputs.polymc.overlay 
+    (final: prev: {
+      glxinfo = prev.mesa-demos;
+    })
+  ];
 
   virtualisation.libvirtd.enable = true;
 

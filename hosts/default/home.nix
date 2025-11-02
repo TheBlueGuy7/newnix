@@ -1,4 +1,4 @@
-{pkgs, inputs, ...}:
+{pkgs, pkgs-stable, inputs, ...}:
 {
 
   imports = [
@@ -18,13 +18,13 @@
     # Desktop apps
     
     firefox
-    brave
+    pkgs-stable.brave
+    librewolf
     vesktop
     vscodium
     inputs.polymc
     shotwell
     tor-browser
-    osu-lazer
     obs-studio
     heroic
     gpu-screen-recorder
@@ -40,10 +40,9 @@
     chromium
     rofimoji
     xfce.thunar
-    modrinth-app
+    orca-slicer
     qtox
     localsend
-
     kdePackages.kwrited
     kdePackages.kate
     kdePackages.kio-admin
@@ -53,6 +52,7 @@
     kdePackages.kimageformats
     kdePackages.kdesdk-thumbnailers
     kdePackages.qtimageformats
+    kdePackages.ark
     libappimage
     icoutils
     resvg
@@ -63,23 +63,32 @@
     kdePackages.breeze
     kdePackages.breeze-icons
     xfce.tumbler
-    gvfs
     easyeffects
+    wxwidgets_3_3
+    lunar-client
+    deluge
+    lutris
+    winetricks
+    jetbrains.idea-ultimate
+    xfce.thunar
+    xfce.thunar-archive-plugin
+    xfce.thunar-volman
+    xfce.tumbler
+    xfce.exo # Adds 'Open Terminal Here'
+    gvfs # Better file system backend
 
 
     # CLI utils
 
     zsh
     fastfetch
-    alacritty
-    nodejs_23
+    nodejs_24
     pnpm_10
     python313
     python313Packages.pip
     eza
     fzf
     tree
-    neovim
     btop
     stow
     exiftool
@@ -97,19 +106,28 @@
     curl
     p7zip
     jdk8
-    xpad
     wineWowPackages.wayland
     virt-manager
     ocamlPackages.gstreamer
     glew
     webkitgtk_4_1
     kdePackages.k3b
+    gcc
+    gnumake
+    pkg-config
+    fd
+    rar
+    rarcrack
+    libadwaita
+    zenity
+    wget
+    openvpn
 
     # Themes
 
     plata-theme
     arc-icon-theme
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    inputs.rose-pine-hyprcursor.packages.${system}.default
 
   ];
 

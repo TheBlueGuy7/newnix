@@ -26,7 +26,6 @@ window#waybar.hidden {
     transition: none;
     color: #7c818c;
     background: transparent;
-    padding: 5px;
     font-size: 16px;
 }
 

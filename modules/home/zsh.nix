@@ -14,7 +14,7 @@
         flakeDir = "~/nix";
       in {
       rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
-      upd = "nix flake update ${flakeDir}";
+      upd = "nix flake update --flake ${flakeDir}";
       upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
       del-garbage = "sudo nix-collect-garbage -d";
       
@@ -24,7 +24,10 @@
       homeconf = "nvim ${flakeDir}/hosts/default/home.nix";
       hyprconf = "nvim ${flakeDir}/dotfiles/hypr/hyprland.conf";
 
+      ls = "eza";
+      la = "eza -la";
       ll = "eza -l";
+
       v = "nvim";
       se = "sudoedit";
       ff = "fastfetch";
