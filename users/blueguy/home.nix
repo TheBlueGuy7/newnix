@@ -1,4 +1,4 @@
-{pkgs, pkgs-stable, inputs, basePath, ...}:
+{pkgs, pkgs-stable, inputs, ...}:
 {
 
   imports = [
@@ -164,9 +164,11 @@
 
     plata-theme
     arc-icon-theme
-    inputs.rose-pine-hyprcursor.packages.${system}.default
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
 
   ];
+
+  
 
   programs.home-manager.enable = true;
   services.playerctld.enable = true;

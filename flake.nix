@@ -79,14 +79,14 @@
           ];
         };
         
-        "laptop" = nixpkgs.lib.nixosSystem {
-          inherit system;
-          inherit specialArgs;
-          modules = [
-            ./hosts/laptop/configuration.nix
-            inputs.home-manager.nixosModules.default 
-          ];
-        };
+        #"laptop" = nixpkgs.lib.nixosSystem {
+        #  inherit system;
+        #  inherit specialArgs;
+        #  modules = [
+        #    ./hosts/laptop/configuration.nix
+        #    inputs.home-manager.nixosModules.default 
+        #  ];
+        #};
         
       };
   };

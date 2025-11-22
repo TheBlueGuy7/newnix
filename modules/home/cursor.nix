@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
     home.pointerCursor = {
       package = pkgs.rose-pine-cursor;
       name = "BreezeX-RosePine-Linux";
