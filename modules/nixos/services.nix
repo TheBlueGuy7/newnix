@@ -9,4 +9,7 @@
   };
   services.gvfs.enable = true;
   programs.xfconf.enable = true;
+  services.samba.enable = true;
+  services.udev.packages = with pkgs; [ platformio-core.udev ];
+  services.tailscale.enable = true;
 }

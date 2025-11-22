@@ -21,7 +21,7 @@
     pkgs-stable.brave
     librewolf
     vesktop
-    vscodium
+    # vscodium
     inputs.polymc
     shotwell
     tor-browser
@@ -54,7 +54,7 @@
     kdePackages.qtimageformats
     kdePackages.ark
     libappimage
-    icoutils
+    pkgs-stable.icoutils
     resvg
     taglib_1
     kdePackages.qt6ct
@@ -63,19 +63,33 @@
     kdePackages.breeze
     kdePackages.breeze-icons
     xfce.tumbler
-    easyeffects
+    pkgs-stable.easyeffects
     wxwidgets_3_3
     lunar-client
     deluge
     lutris
     winetricks
-    jetbrains.idea-ultimate
+    pkgs-stable.jetbrains.idea-ultimate
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-volman
     xfce.tumbler
-    xfce.exo # Adds 'Open Terminal Here'
-    gvfs # Better file system backend
+    xfce.exo
+    gvfs
+    helvum
+    libreoffice-qt6-fresh
+    onlyoffice-desktopeditors
+    parabolic
+    labymod-launcher
+    teamspeak6-client
+    blender-hip
+    krita
+    wireshark
+    vscode
+    qdirstat
+    pkgs-stable.eagle
+    obsidian
+
 
 
     # CLI utils
@@ -105,7 +119,6 @@
     gnutar
     curl
     p7zip
-    jdk8
     wineWowPackages.wayland
     virt-manager
     ocamlPackages.gstreamer
@@ -122,6 +135,30 @@
     zenity
     wget
     openvpn
+    cifs-utils
+    hashcat
+    john
+    hcxdumptool
+    hcxtools
+    aircrack-ng
+    airgeddon
+    ripgrep
+    avrdude
+    inetutils
+    hashid
+    sqlmap
+    scanmem
+    imagemagick
+    metasploit
+    burpsuite
+    dnslookup
+    trayscale
+    jdk25_headless
+    pv
+    sdrpp
+    piper
+    libratbag
+
 
     # Themes
 
@@ -132,4 +169,5 @@
   ];
 
   programs.home-manager.enable = true;
+  services.playerctld.enable = true;
 }

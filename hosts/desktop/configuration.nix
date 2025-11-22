@@ -35,6 +35,7 @@
     mesa-demos
     pkgs.wxwidgets_3_3
     pkgs.polymc
+    wayvnc
 
   ];
 
@@ -73,12 +74,21 @@
 
   virtualisation.libvirtd.enable = true;
 
-
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
     wlr.enable = true;
     config.common.default = "*";
   };
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add libraries required by the ESP-IDF / PlatformIO toolchain
+    # Common ones might include:
+    gcc-unwrapped.lib
+    glibc
+    # You might need others depending on the specific toolchain version
+    # Check the PlatformIO ESP32 core documentation or error messages if unsure
+  ];
 }
 

@@ -18,6 +18,7 @@
   '';
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "ntfs" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/cdcd2717-db3c-4934-9968-740abd5377e1";

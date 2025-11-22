@@ -5,5 +5,6 @@
     ./graphics.nix
     ./services.nix
     ./network.nix
+    ./ssh.nix
   ];
 }
