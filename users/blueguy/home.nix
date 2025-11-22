@@ -1,8 +1,8 @@
-{pkgs, pkgs-stable, inputs, ...}:
+{pkgs, pkgs-stable, inputs, basePath, ...}:
 {
 
   imports = [
-   ../../modules/home
+    ../../modules/home
   ];
 
   home = {

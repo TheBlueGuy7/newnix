@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, pkgs-stable, ... }:
+{ inputs, config, pkgs, pkgs-stable, basePath, ... }:
 
 {
   imports = [ 
@@ -13,7 +13,8 @@
     };
     backupFileExtension = "backup";
     users = {
-      "blueguy" = import ./home.nix;
+      "blueguy" = import ../../users/blueguy/home.nix;
+      # "steve" = import ../../users/steve/home.nix;
     };
     useGlobalPkgs = false;
   };
@@ -80,15 +81,5 @@
     wlr.enable = true;
     config.common.default = "*";
   };
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add libraries required by the ESP-IDF / PlatformIO toolchain
-    # Common ones might include:
-    gcc-unwrapped.lib
-    glibc
-    # You might need others depending on the specific toolchain version
-    # Check the PlatformIO ESP32 core documentation or error messages if unsure
-  ];
 }
 

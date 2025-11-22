@@ -13,24 +13,45 @@
     hyprpaper = {
        url = "github:hyprwm/hyprpaper";
        inputs.nixpkgs.follows = "nixpkgs";
-   };
+    };
+
+    hyprlang = {
+      url = "github:hyprwm/hyprlang";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     polymc.url = "github:PolyMC/PolyMC";
 
     rose-pine-hyprcursor = {
       url = "github:ndom91/rose-pine-hyprcursor";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.hyprlang.follows = "hyprland/hyprlang";
+      inputs.hyprlang.follows = "hyprlang";
     };
 
-    hyprland.url = "github:hyprwm/hyprland?ref=v0.36.0";
+    hyprland = {
+      url = "github:hyprwm/hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... } @inputs:
+  outputs = { 
+    self, 
+    nixpkgs, 
+    nixpkgs-stable, 
+    home-manager, 
+    hyprpaper, 
+    polymc, 
+    hyprlang, 
+    rose-pine-hyprcursor, 
+    hyprland,
+    ... 
+  } @inputs:
+
   let 
     system = "x86_64-linux";
+    
     pkgs-stable = import nixpkgs-stable {
       inherit system;
       config.allowUnfree = true;
@@ -40,17 +61,33 @@
       config.allowUnfree = true;
     };
 
-  in {
-    nixosConfigurations.radiator-nixos = nixpkgs.lib.nixosSystem {
-	    specialArgs = {
-        
-	      inherit inputs system pkgs-stable;
-	    };
-
-	    modules = [
-	      ./hosts/default/configuration.nix
-	      inputs.home-manager.nixosModules.default
-      ];
+    specialArgs = {    
+	    inherit inputs;
+      inherit pkgs-stable;
     };
+
+  in 
+  {
+    nixosConfigurations = {
+      
+        "desktop" = nixpkgs.lib.nixosSystem {
+          inherit system;
+          inherit specialArgs;
+          modules = [
+            ./hosts/desktop/configuration.nix
+            inputs.home-manager.nixosModules.default 
+          ];
+        };
+        
+        "laptop" = nixpkgs.lib.nixosSystem {
+          inherit system;
+          inherit specialArgs;
+          modules = [
+            ./hosts/laptop/configuration.nix
+            inputs.home-manager.nixosModules.default 
+          ];
+        };
+        
+      };
   };
 }

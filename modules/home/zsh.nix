@@ -11,11 +11,12 @@
 
     shellAliases =
       let
-        flakeDir = "~/nix";
+        flakeDir = "/home/nix";
+        host = "desktop";
       in {
-      rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
-      upd = "nix flake update --flake ${flakeDir}";
-      upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
+      rb = "sudo nixos-rebuild switch --flake ${flakeDir}#${host}";
+      upd = "nix flake update --flake ${flakeDir}#${host}";
+      upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}#${host}";
       del-garbage = "sudo nix-collect-garbage -d";
       
 
