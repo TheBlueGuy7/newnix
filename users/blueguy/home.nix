@@ -157,7 +157,9 @@
     pv
     sdrpp
     piper
-    libratbag
+    android-studio
+    android-tools
+    prismlauncher
 
 
     # Themes

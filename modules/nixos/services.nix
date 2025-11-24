@@ -12,4 +12,5 @@
   services.samba.enable = true;
   services.udev.packages = with pkgs; [ platformio-core.udev ];
   services.tailscale.enable = true;
+  services.ratbagd.enable = true;
 }

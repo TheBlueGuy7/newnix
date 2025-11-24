@@ -22,6 +22,11 @@
 
     polymc.url = "github:PolyMC/PolyMC";
 
+    prismlauncher = {
+      url = "github:PrismLauncher/PrismLauncher";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     rose-pine-hyprcursor = {
       url = "github:ndom91/rose-pine-hyprcursor";
       inputs.nixpkgs.follows = "nixpkgs";
