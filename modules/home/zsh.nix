@@ -6,7 +6,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     initContent = ''
-      fastfetch
+      nitch
     '';
 
     shellAliases =
@@ -15,7 +15,8 @@
         host = "desktop";
       in {
       rb = "sudo nixos-rebuild switch --flake ${flakeDir}#${host}";
-      upd = "nix flake update --flake ${flakeDir}#${host}";
+      rbt = "sudo nixos-rebuild test --flake ${flakeDir}#${host}";
+      upd = "nix flake update --flake ${flakeDir}";
       upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}#${host}";
       del-garbage = "sudo nix-collect-garbage -d";
       

@@ -37,7 +37,7 @@
       "tooltip": false
     },
     "cpu": {
-      "format": "{usage}% ",
+      "format": "{usage}%  ",
       "interval": 2,
       "on-click": "btop"
     },

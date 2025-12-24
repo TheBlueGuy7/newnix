@@ -16,7 +16,7 @@ window#waybar.hidden {
 }
 
 #workspaces {
-    margin-right: 8px;
+    margin-right: 0px;
     border-radius: 10px;
     transition: none;
     background: #383c4a;

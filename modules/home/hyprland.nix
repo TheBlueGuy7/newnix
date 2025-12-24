@@ -9,14 +9,19 @@
     wl-clip-persist
     cliphist
     wf-recorder
-    glib
-    wayland
     direnv
-    hyprshot
-    hyprpaper
-    hyprpolkitagent
     pavucontrol
     wl-clipboard
+
+    pyprland
+    hyprpicker
+    hyprcursor
+    hyprlock
+    hypridle
+    hyprshot
+    hyprpaper
+    hyprsunset
+    hyprpolkitagent
     
   ];
   systemd.user.targets.hyprland-session.Unit.Wants = [
@@ -24,6 +29,7 @@
   ];
 
   programs.hyprlock.enable = true;
+  services.hypridle.enable = true;
 
   home.file.".config/hypr".source = ../dotfiles/hypr;
 }

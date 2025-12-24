@@ -16,6 +16,11 @@
   boot.extraModprobeConfig = ''
     options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
   '';
+  boot.blacklistedKernelModules = [ 
+    "dvb_usb_rtl28xxu" 
+    "rtl2832" 
+    "rtl2830" 
+  ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
@@ -40,6 +45,7 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  hardware.rtl-sdr.enable = true;
   # networking.interfaces.enp3s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

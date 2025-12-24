@@ -1,0 +1,41 @@
+{ pkgs, pkgs-stable, ... }:
+{
+    home.packages = with pkgs; [
+        telegraph
+        unixcw
+        sdrpp
+        virt-manager
+        deluge
+        easyeffects
+        xfce.tumbler
+        xfce.thunar
+        orca-slicer
+        qtox
+        localsend
+        kdePackages.kwrited
+        kdePackages.kate
+        kdePackages.ark
+        filezilla
+        gparted
+        gpu-screen-recorder
+        gpu-screen-recorder-gtk
+        vlc
+        qalculate-gtk
+        shotwell
+        tor-browser
+        obs-studio
+        chromium
+        helvum
+        libreoffice-qt6-fresh
+        onlyoffice-desktopeditors
+        parabolic
+        blender-hip
+        krita
+        qdirstat
+        obsidian
+        trayscale
+        sdrpp
+        kicad
+        audacity
+    ];
+}

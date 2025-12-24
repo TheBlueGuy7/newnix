@@ -5,7 +5,7 @@
   users = {
     users.blueguy = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "libvirtd" "dialout" "docker" ];
+      extraGroups = [ "wheel" "libvirtd" "dialout" "docker" "input" "plugdev" ];
       initialPassword = "1234";
       shell = pkgs.zsh;
     };

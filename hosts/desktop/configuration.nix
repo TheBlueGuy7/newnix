@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, pkgs-stable, basePath, ... }:
+{ inputs, config, pkgs, pkgs-stable, ... }:
 
 {
   imports = [ 
@@ -60,7 +60,7 @@
 
   console.keyMap = "us";
   
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

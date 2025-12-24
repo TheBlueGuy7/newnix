@@ -1,8 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./gtk.nix
-    ./qt.nix
+    ./themes
     #./mime.nix
     ./cursor.nix
     ./zsh.nix
@@ -12,8 +11,12 @@
     ./dunst.nix
     ./waybar.nix
     ./neovim.nix
+
+    ./apps.nix
+    ./developement.nix
+    ./pentesting.nix
+    ./gaming.nix
+    ./utils.nix
   ];
-  home.sessionVariables = {
-    GIO_EXTRA_MODULES = "${pkgs.gvfs}/lib/gio/modules";
-  };
+  
 }
