@@ -11,6 +11,7 @@
     ./dunst.nix
     ./waybar.nix
     ./neovim.nix
+    ./vnc.nix
 
     ./apps.nix
     ./developement.nix

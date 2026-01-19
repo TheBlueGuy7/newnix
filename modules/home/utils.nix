@@ -28,11 +28,13 @@
         taglib_1
         rofimoji
         xdg-utils
-        xfce.thunar-archive-plugin
-        xfce.thunar-volman
-        xfce.exo
+        thunar-archive-plugin
+        thunar-volman
+        xfce4-exo
         nitch
         ffmpeg
+        parallel
+        mkvtoolnix
     ];
 
     services.playerctld.enable = true;

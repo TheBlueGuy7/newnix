@@ -34,9 +34,7 @@
     mesa_glu
     vulkan-loader
     mesa-demos
-    pkgs.wxwidgets_3_3
-    pkgs.polymc
-    wayvnc
+    inputs.agenix.packages.${pkgs.system}.default
 
   ];
 

@@ -7,7 +7,7 @@
         python313Packages.pip
         android-studio
         android-tools
-        pkgs-stable.jetbrains.idea-ultimate
+        pkgs-stable.jetbrains.idea
         jdk25_headless
         avrdude
         arduino-ide

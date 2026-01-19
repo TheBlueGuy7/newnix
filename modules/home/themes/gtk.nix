@@ -15,6 +15,10 @@
 gtk = {
     enable = true;
     theme = {
+    name = "Adwaita-dark";
+    package = pkgs.gnome-themes-extra;
+  };
+    /*theme = {
       name = "Catppuccin-Macchiato-Standard-Blue-Dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "blue" ];
@@ -22,6 +26,7 @@ gtk = {
         variant = "macchiato";
       };
     };
+    */
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.catppuccin-papirus-folders.override {
@@ -37,13 +42,8 @@ gtk = {
     };
   };
 
-
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      gtk-theme = "Catppuccin-Macchiato-Standard-Blue-Dark";
-      icon-theme = "Papirus-Dark";
-      color-scheme = "prefer-dark";
-    };
+  dconf.settings."org/gnome/desktop/interface" = {
+    color-scheme = "prefer-dark";
+    gtk-theme = "Adwaita-dark";
   };
-  
 }

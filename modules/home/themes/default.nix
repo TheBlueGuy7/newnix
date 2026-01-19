@@ -13,7 +13,6 @@
         accent = "blue";
         variant = "macchiato";
         })
-        pkgs-stable.libsForQt5.qtstyleplugin-kvantum
         papirus-folders
         numix-icon-theme-circle
         colloid-icon-theme

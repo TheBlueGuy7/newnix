@@ -7,8 +7,8 @@
         virt-manager
         deluge
         easyeffects
-        xfce.tumbler
-        xfce.thunar
+        tumbler
+        thunar
         orca-slicer
         qtox
         localsend
@@ -29,7 +29,7 @@
         libreoffice-qt6-fresh
         onlyoffice-desktopeditors
         parabolic
-        blender-hip
+        blender
         krita
         qdirstat
         obsidian
@@ -37,5 +37,6 @@
         sdrpp
         kicad
         audacity
+        spotify
     ];
 }

@@ -38,6 +38,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
 
@@ -80,7 +85,8 @@
           inherit specialArgs;
           modules = [
             ./hosts/desktop/configuration.nix
-            inputs.home-manager.nixosModules.default 
+            inputs.home-manager.nixosModules.default
+            inputs.agenix.nixosModules.default
           ];
         };
         
