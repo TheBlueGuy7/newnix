@@ -5,11 +5,8 @@
     #./mime.nix
     ./cursor.nix
     ./zsh.nix
-    ./hyprland.nix
+    ./hypr.nix
     ./alacritty.nix
-    ./rofi.nix
-    ./dunst.nix
-    ./waybar.nix
     ./neovim.nix
     ./vnc.nix
 
