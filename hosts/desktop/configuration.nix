@@ -35,6 +35,7 @@
     vulkan-loader
     mesa-demos
     inputs.agenix.packages.${pkgs.system}.default
+    hyprlandPlugins.csgo-vulkan-fix
 
   ];
 

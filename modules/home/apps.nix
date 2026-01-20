@@ -2,8 +2,10 @@
 {
     home.packages = with pkgs; [
         telegraph
+        pkgs-stable.brave
+        firefox
+        vesktop
         unixcw
-        sdrpp
         virt-manager
         deluge
         easyeffects
