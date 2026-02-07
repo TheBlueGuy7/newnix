@@ -1,8 +1,7 @@
 { pkgs, pkgs-stable, ... }:
 {
     home.packages = with pkgs; [
-        telegraph
-        pkgs-stable.brave
+        brave
         firefox
         vesktop
         unixcw
@@ -14,9 +13,12 @@
         orca-slicer
         qtox
         localsend
+
         kdePackages.kwrited
         kdePackages.kate
         kdePackages.ark
+        kdePackages.kdenlive
+        
         filezilla
         gparted
         gpu-screen-recorder
@@ -40,5 +42,7 @@
         kicad
         audacity
         spotify
+        r2modman
+        teamspeak6-client
     ];
 }

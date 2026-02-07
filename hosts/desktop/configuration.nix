@@ -39,6 +39,8 @@
 
   ];
 
+  programs.nix-ld.enable = true;
+
   fonts.packages = with pkgs; [
     jetbrains-mono
     noto-fonts

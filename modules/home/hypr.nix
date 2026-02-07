@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     swww
     grimblast
-    hyprpicker
     grim
     slurp
     wl-clip-persist
@@ -16,10 +15,10 @@
     pyprland
     hyprpicker
     hyprcursor
-    hypridle
     hyprshot
     hyprpaper
     hyprsunset
+    hypridle
     hyprpolkitagent
     
   ];

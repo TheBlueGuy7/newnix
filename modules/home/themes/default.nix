@@ -9,10 +9,6 @@
         #plata-theme
         arc-icon-theme
         inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
-        (catppuccin-kvantum.override {
-        accent = "blue";
-        variant = "macchiato";
-        })
         papirus-folders
         numix-icon-theme-circle
         colloid-icon-theme

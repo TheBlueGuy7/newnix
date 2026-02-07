@@ -28,9 +28,13 @@
         taglib_1
         rofimoji
         xdg-utils
+
         thunar-archive-plugin
         thunar-volman
+        thunar-vcs-plugin
+        thunar-media-tags-plugin
         xfce4-exo
+
         nitch
         ffmpeg
         parallel
