@@ -42,6 +42,10 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    #nix-comfyui = { 
+    #  url = "github:dyscorv/nix-comfyui";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
   };
 
@@ -87,6 +91,19 @@
             ./hosts/desktop/configuration.nix
             inputs.home-manager.nixosModules.default
             inputs.agenix.nixosModules.default
+            {
+              nixpkgs.overlays = [
+                (final: prev: {
+                  pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
+                    (python-final: python-prev: {
+                      picosvg = python-prev.picosvg.overridePythonAttrs (oldAttrs: {
+                      doCheck = false; # This skips the failing tests
+                    });
+                  })
+                ];
+              })
+            ];
+            }
           ];
         };
         

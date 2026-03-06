@@ -39,6 +39,8 @@
         ffmpeg
         parallel
         mkvtoolnix
+        yt-dlp
+        #ollama-cuda
     ];
 
     services.playerctld.enable = true;

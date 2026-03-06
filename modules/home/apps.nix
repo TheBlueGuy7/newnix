@@ -1,6 +1,6 @@
 { pkgs, pkgs-stable, ... }:
 {
-    home.packages = with pkgs; [
+  home.packages = with pkgs; [
         brave
         firefox
         vesktop
@@ -32,9 +32,9 @@
         helvum
         libreoffice-qt6-fresh
         onlyoffice-desktopeditors
-        parabolic
+        #parabolic
         blender
-        krita
+        #krita
         qdirstat
         obsidian
         trayscale
@@ -44,5 +44,15 @@
         spotify
         r2modman
         teamspeak6-client
+        mpv
+        kdePackages.kleopatra
+        qpwgraph
+        mousai
+        wireshark
+        code-cursor
+        cryptsetup
+        dmidecode
+        lsp-plugins
+        
     ];
 }
